@@ -1,0 +1,9 @@
+<h3>Je m'appelle {{ prenom }}</h3>
+
+<div [style.backgroundColor]="color">Formation en Angular</div>
+
+<div [hidden]="hd">Chez PLB</div>
+
+<button class="btn btn-primary" (click)="afficherAlert()">Click me</button>
+
+<input class="form-control" [(ngModel)]="prenom" />
