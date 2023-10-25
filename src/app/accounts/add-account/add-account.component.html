@@ -1,1 +1,13 @@
-<p>add-account works!</p>
+<div class="row">
+  <div class="encadre col-md-7">
+    <label>Account name</label>
+    <input [(ngModel)]="nameAccount" type="text" class="form-control" />
+
+    <label>Account Status</label>
+    <select [(ngModel)]="statutAccount" class="form-control">
+      <option *ngFor="let st of tabStatuts" [value]="st">{{ st }}</option>
+    </select>
+
+    <button class="btn btn-primary" (click)="onAdd()">Add Account</button>
+  </div>
+</div>
