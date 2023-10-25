@@ -13,4 +13,8 @@ export class FirstComponent {
   afficherAlert() {
     alert('Le bouton a été cliqué !');
   }
+
+  traitementDuParent(msgRecu) {
+    this.prenom = msgRecu;
+  }
 }
