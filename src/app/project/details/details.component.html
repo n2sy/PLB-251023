@@ -5,16 +5,15 @@
         <img src="../../../assets/rotating_card_thumb2.png" />
       </div>
       <div class="user">
-        <img class="img-circle" src="../../../assets/homer.jpg" />
+        <img class="img-circle" src="../../../assets/{{ selCand.avatar }}" />
       </div>
       <div class="content">
         <div class="main">
-          <h3 class="name">Inna Corman</h3>
-          <p class="profession">Product Manager</p>
+          <h3 class="name">{{ selCand.prenom }} {{ selCand.nom }}</h3>
+          <p class="profession">{{ selCand.age }} ans</p>
 
           <p class="text-center">
-            "I'm the new Sinatra, and since I made it here I can make it
-            anywhere, yeah, they love me everywhere"
+            {{ selCand.profession }}
           </p>
         </div>
         <div class="footer">
