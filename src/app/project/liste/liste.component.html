@@ -1,12 +1,8 @@
 <ol class="list-group">
   <app-item
+    *ngFor="let cand of candsTab; let i = index"
     (msgToListe)="sendCandToCv($event)"
-    [oneCandidate]="candsTab[0]"
-  ></app-item>
-  <app-item (msgToListe)="sendCandToCv($event)" [oneCandidate]="candsTab[1]">
+    [oneCandidate]="cand"
+  >
   </app-item>
-  <app-item
-    (msgToListe)="sendCandToCv($event)"
-    [oneCandidate]="candsTab[2]"
-  ></app-item>
 </ol>

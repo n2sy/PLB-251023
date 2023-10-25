@@ -6,6 +6,9 @@
     ></app-liste>
   </div>
   <div class="col-md-7">
-    <app-details [selCand]="selectedCandidat"></app-details>
+    <app-details
+      *ngIf="selectedCandidat"
+      [selCand]="selectedCandidat"
+    ></app-details>
   </div>
 </div>
