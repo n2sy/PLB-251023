@@ -12,9 +12,11 @@ import { ItemComponent } from './project/item/item.component';
 import { HomeAccountsComponent } from './accounts/home-accounts/home-accounts.component';
 import { DetailsAccountComponent } from './accounts/details-account/details-account.component';
 import { AddAccountComponent } from './accounts/add-account/add-account.component';
+import { DirectComponent } from './direct/direct.component';
+import { MsWordComponent } from './ms-word/ms-word.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, SecondComponent, CvComponent, ListeComponent, DetailsComponent, ItemComponent, HomeAccountsComponent, DetailsAccountComponent, AddAccountComponent],
+  declarations: [AppComponent, FirstComponent, SecondComponent, CvComponent, ListeComponent, DetailsComponent, ItemComponent, HomeAccountsComponent, DetailsAccountComponent, AddAccountComponent, DirectComponent, MsWordComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
