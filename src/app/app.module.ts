@@ -18,6 +18,7 @@ import { ManageServersComponent } from './manage-servers/manage-servers.componen
 import { ShortPipe } from './pipes/short.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { DefaultImagePipe } from './pipes/default-image.pipe';
+import { FirstService } from './services/first.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { DefaultImagePipe } from './pipes/default-image.pipe';
     DefaultImagePipe,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [FirstService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
