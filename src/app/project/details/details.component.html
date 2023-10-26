@@ -56,7 +56,12 @@
       </div>
       <div class="footer">
         <div class="social-links text-center">
-          <button (click)="addNewRecrue()" class="btn btn-success">Recruter</button>
+          <button (click)="addNewRecrue()" class="btn btn-success">
+            Recruter
+          </button>
+          <a [routerLink]="['/cv', selCand.id]" class="btn btn-info">
+            + Details
+          </a>
         </div>
       </div>
     </div>

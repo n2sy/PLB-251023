@@ -20,6 +20,14 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { DefaultImagePipe } from './pipes/default-image.pipe';
 import { FirstService } from './services/first.service';
 import { RecruterComponent } from './project/recruter/recruter.component';
+import { SecondService } from './services/second.service';
+import { AccueilComponent } from './project/accueil/accueil.component';
+import { PLB_ROUTING } from './app.routing';
+import { NavbarComponent } from './project/navbar/navbar.component';
+import { InfosComponent } from './project/infos/infos.component';
+import { UpdateComponent } from './project/update/update.component';
+import { AddComponent } from './project/add/add.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -40,9 +48,16 @@ import { RecruterComponent } from './project/recruter/recruter.component';
     FilterPipe,
     DefaultImagePipe,
     RecruterComponent,
+    AccueilComponent,
+    NavbarComponent,
+    InfosComponent,
+    UpdateComponent,
+    AddComponent,
+    NotFoundComponent,
   ],
-  imports: [BrowserModule, FormsModule],
-  providers: [FirstService],
+  imports: [BrowserModule, FormsModule, PLB_ROUTING],
+
+  providers: [FirstService, SecondService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
