@@ -33,6 +33,6 @@ export class CvComponent {
   }
 
   addNewCandidat() {
-    this.candSer.addCandidat();
+    //this.candSer.addCandidat();
   }
 }

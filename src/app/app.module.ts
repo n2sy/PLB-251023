@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SecondComponent } from './second/second.component';
 import { CvComponent } from './project/cv/cv.component';
 import { ListeComponent } from './project/liste/liste.component';
@@ -29,6 +29,9 @@ import { UpdateComponent } from './project/update/update.component';
 import { AddComponent } from './project/add/add.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { ReactFormComponent } from './react-form/react-form.component';
+import { ExpObsComponent } from './exp-obs/exp-obs.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -56,8 +59,16 @@ import { LoginComponent } from './login/login.component';
     AddComponent,
     NotFoundComponent,
     LoginComponent,
+    ReactFormComponent,
+    ExpObsComponent,
   ],
-  imports: [BrowserModule, FormsModule, PLB_ROUTING],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    PLB_ROUTING,
+  ],
 
   providers: [FirstService, SecondService],
   bootstrap: [AppComponent],

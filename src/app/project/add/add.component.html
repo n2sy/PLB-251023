@@ -1,1 +1,45 @@
-<p>add works!</p>
+<div class="container">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+    <label for="prenom">Prénom</label>
+    <input
+      required
+      type="text"
+      class="form-control"
+      id="prenom"
+      name="prenom"
+      ngModel
+    />
+    <label for="nom">Nom</label>
+    <input
+      required
+      type="text"
+      class="form-control"
+      ngModel
+      id="nom"
+      name="nom"
+    />
+
+    <label for="age">Age</label>
+    <input type="number" class="form-control" ngModel id="age" name="age" />
+
+    <label for="profession">Profession</label>
+    <input
+      required
+      type="text"
+      class="form-control"
+      id="profession"
+      name="profession"
+      ngModel
+    />
+
+    <label for="path">Url de l'avatar</label>
+    <input type="text" class="form-control" id="path" name="avatar" ngModel />
+
+    <button type="submit" class="btn btn-primary">Ajouter CV</button>
+  </form>
+
+  <pre>
+
+      {{ f.value | json }}
+  </pre>
+</div>
