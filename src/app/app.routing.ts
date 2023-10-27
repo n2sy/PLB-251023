@@ -11,10 +11,16 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 const myRoutes: Routes = [
   { path: '', component: AccueilComponent },
-  { path: 'cv', component: CvComponent },
-  { path: 'cv/add', component: AddComponent },
-  { path: 'cv/:candId', component: InfosComponent },
-  { path: 'cv/:id/edit', component: UpdateComponent },
+  {
+    path: 'cv',
+    component: CvComponent,
+    children: [
+      // { path: '', component: CvComponent },
+      { path: 'add', component: AddComponent },
+      { path: ':candId', component: InfosComponent },
+      { path: ':id/edit', component: UpdateComponent },
+    ],
+  },
   { path: 'ms-word', component: MsWordComponent },
   { path: 'servers', component: ManageServersComponent },
   { path: 'accounts', component: HomeAccountsComponent },

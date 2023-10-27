@@ -12,7 +12,7 @@
 
 export class Candidat {
   constructor(
-    public id: number,
+    public _id: number,
     public prenom: string,
     public nom: string,
     public age: number,
