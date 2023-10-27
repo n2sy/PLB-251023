@@ -1,4 +1,6 @@
 <h4>{{ serveur.title }}</h4>
 <br />
 <p>Le statut du serveur est {{ serveur.statut }} </p>
-<button class="btn btn-info">Editer</button>
+<button [disabled]="!showAllowEditBtn" routerLink="edit" class="btn btn-info">
+  Editer
+</button>

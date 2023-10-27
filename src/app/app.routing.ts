@@ -8,14 +8,14 @@ import { InfosComponent } from './project/infos/infos.component';
 import { AddComponent } from './project/add/add.component';
 import { UpdateComponent } from './project/update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
 
 const myRoutes: Routes = [
   { path: '', component: AccueilComponent },
   {
     path: 'cv',
-    component: CvComponent,
     children: [
-      // { path: '', component: CvComponent },
+      { path: '', component: CvComponent },
       { path: 'add', component: AddComponent },
       { path: ':candId', component: InfosComponent },
       { path: ':id/edit', component: UpdateComponent },
@@ -27,6 +27,7 @@ const myRoutes: Routes = [
     loadChildren: () => import('./sub/sub.module').then((m) => m.SubModule),
   },
   { path: 'servers', component: ManageServersComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'accounts', component: HomeAccountsComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },

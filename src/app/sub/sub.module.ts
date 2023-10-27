@@ -4,6 +4,7 @@ import { ListServersComponent } from './list-servers/list-servers.component';
 import { InfoServerComponent } from './info-server/info-server.component';
 import { EditServerComponent } from './edit-server/edit-server.component';
 import { SUB_ROUTING } from './sub.routing';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,6 @@ import { SUB_ROUTING } from './sub.routing';
     InfoServerComponent,
     EditServerComponent,
   ],
-  imports: [CommonModule, SUB_ROUTING],
+  imports: [CommonModule, FormsModule, SUB_ROUTING],
 })
 export class SubModule {}

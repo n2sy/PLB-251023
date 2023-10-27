@@ -1,0 +1,67 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <label for="log">Login</label>
+  <input
+    #inpLogin="ngModel"
+    type="text"
+    class="form-control"
+    required
+    email
+    ngModel
+    name="login"
+    id="log"
+  />
+
+  <div *ngIf="inpLogin.invalid && inpLogin.touched" class="alert alert-danger">
+    Saisissez une adresse mail valide
+  </div>
+
+  <label for="">Mot de passe</label>
+  <input type="text" required class="form-control" ngModel name="password" />
+
+  <!-- <label for="">Langage préféré</label>
+  <select [ngModel]="defaultLanguage" name="langage" class="form-control">
+    <option value=""></option>
+    <option value="php">Php</option>
+    <option value="java">Java</option>
+    <option value="js">Javascript</option>
+  </select>
+
+  <hr />
+
+  <div #grp="ngModelGroup" ngModelGroup="contact">
+    <label>N° Tel</label>
+    <input type="text" required class="form-control" ngModel name="telephone" />
+
+    <label for="">Fax</label>
+    <input type="text" required class="form-control" ngModel name="fax" />
+  </div>
+  <div *ngIf="grp.invalid" class="alert alert-danger">
+    Les numéros de Tel et le fax sont obligatoires
+  </div>
+
+  <hr />
+  <label>Gestion des erreurs</label>
+  <input
+    #exp="ngModel"
+    type="text"
+    required
+    minlength="5"
+    pattern="nidhal"
+    class="form-control"
+    ngModel
+    name="erreurs"
+  />
+
+  <div *ngIf="exp.invalid" class="alert alert-danger">
+    <p *ngIf="exp.errors['required']">Ce champ est obligatoire</p>
+    <p *ngIf="exp.errors['minlength']">Le nombre minimum de caractères est 5</p>
+    <p *ngIf="exp.errors['pattern']">Le pattern est 'nidhal'</p>
+  </div> -->
+
+  <br />
+  <button type="submit" class="btn btn-primary">Se connecter</button>
+
+  <pre>
+    {{ f.value | json }}
+  </pre>
+</form>

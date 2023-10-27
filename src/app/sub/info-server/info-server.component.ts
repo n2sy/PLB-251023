@@ -9,6 +9,7 @@ import { ListServerService } from '../list-server.service';
 })
 export class InfoServerComponent {
   serveur;
+  showAllowEditBtn;
   constructor(
     private actRoute: ActivatedRoute,
     private serverSer: ListServerService
@@ -19,6 +20,12 @@ export class InfoServerComponent {
     this.actRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
         this.serveur = this.serverSer.getServerById(p.get('id'));
+      },
+    });
+
+    this.actRoute.queryParamMap.subscribe({
+      next: (p: ParamMap) => {
+        this.showAllowEditBtn = p.get('allowEdit') == '1' ? true : false;
       },
     });
   }
