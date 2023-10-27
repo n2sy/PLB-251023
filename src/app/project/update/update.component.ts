@@ -19,13 +19,29 @@ export class UpdateComponent {
   ngOnInit() {
     this.actRoute.paramMap.subscribe({
       next: (p) => {
-        this.candidatToUpdate = this.candSer.getCandidatById(p.get('id'));
+        // console.log(typeof p.get('candId'));
+
+        this.candSer.getCandidatByIdAPI(p.get('id')).subscribe({
+          next: (response: Candidat) => {
+            this.candidatToUpdate = response;
+          },
+          error: (err) => {
+            this.router.navigateByUrl('/not-found');
+          },
+        });
       },
     });
   }
 
   onSubmit() {
-    this.candSer.updateCandidat(this.candidatToUpdate);
-    this.router.navigateByUrl('/cv');
+    this.candSer.updateCandidatAPI(this.candidatToUpdate).subscribe({
+      next: (response) => {
+        alert(response['message']);
+        this.router.navigateByUrl('/cv');
+      },
+      error: (err) => {
+        console.log('Probleme avec Update');
+      },
+    });
   }
 }

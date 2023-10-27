@@ -32,6 +32,9 @@ import { LoginComponent } from './login/login.component';
 import { ReactFormComponent } from './react-form/react-form.component';
 import { ExpObsComponent } from './exp-obs/exp-obs.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProvideInterceptor } from './add-token.interceptor';
+import { AllowGuard } from './allow.guard';
+import { LogoutGuard } from './logout.guard';
 
 @NgModule({
   declarations: [
@@ -70,7 +73,13 @@ import { HttpClientModule } from '@angular/common/http';
     PLB_ROUTING,
   ],
 
-  providers: [FirstService, SecondService],
+  providers: [
+    FirstService,
+    SecondService,
+    ProvideInterceptor,
+    AllowGuard,
+    LogoutGuard,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

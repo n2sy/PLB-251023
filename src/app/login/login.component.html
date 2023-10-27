@@ -7,7 +7,7 @@
     required
     email
     ngModel
-    name="login"
+    name="email"
     id="log"
   />
 
@@ -17,6 +17,18 @@
 
   <label for="">Mot de passe</label>
   <input type="text" required class="form-control" ngModel name="password" />
+
+  <br />
+  <div class="row">
+    <div class="col-md-6" offset="3">
+      <button (click)="onLogin(f)" type="submit" class="btn btn-primary">
+        Se connecter
+      </button>
+      <button (click)="onRegister(f)" type="submit" class="btn btn-warning">
+        S'inscrire
+      </button>
+    </div>
+  </div>
 
   <!-- <label for="">Langage préféré</label>
   <select [ngModel]="defaultLanguage" name="langage" class="form-control">
@@ -57,9 +69,6 @@
     <p *ngIf="exp.errors['minlength']">Le nombre minimum de caractères est 5</p>
     <p *ngIf="exp.errors['pattern']">Le pattern est 'nidhal'</p>
   </div> -->
-
-  <br />
-  <button type="submit" class="btn btn-primary">Se connecter</button>
 
   <pre>
     {{ f.value | json }}

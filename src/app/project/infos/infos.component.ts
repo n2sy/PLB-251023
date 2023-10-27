@@ -28,11 +28,29 @@ export class InfosComponent {
       next: (p: ParamMap) => {
         // console.log(typeof p.get('candId'));
 
-        this.selectedCandidat = this.candSer.getCandidatById(p.get('candId'));
-        if (!this.selectedCandidat) {
-          this.router.navigateByUrl('/not-found');
-        }
+        this.candSer.getCandidatByIdAPI(p.get('candId')).subscribe({
+          next: (response: Candidat) => {
+            this.selectedCandidat = response;
+          },
+          error: (err) => {
+            this.router.navigateByUrl('/not-found');
+          },
+        });
       },
     });
+  }
+
+  onDelete() {
+    if (confirm('Etes vous sur de vouloir supprimer ce candidat')) {
+      this.candSer.deleteCandidatAPI(this.selectedCandidat._id).subscribe({
+        next: (response) => {
+          alert(response['message']);
+          this.router.navigateByUrl('/cv');
+        },
+        error: (err) => {
+          console.log('probleme avec Delete');
+        },
+      });
+    }
   }
 }

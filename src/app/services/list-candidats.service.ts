@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Candidat } from '../models/candidat';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ListCandidatsService {
+  link = 'http://localhost:3000/cv/persons';
   private allCandidats: Candidat[] = [
     new Candidat(1, 'bart', 'simpson', 22, 'ingénieur', 'bart.jpeg'),
     new Candidat(2, 'homer', 'simpson', 54, 'directeur'),
@@ -20,15 +21,32 @@ export class ListCandidatsService {
     this.http.put;
   }
 
+  addCandidatAPI(newC) {
+    return this.http.post(this.link, newC);
+  }
+
   updateCandidat(uCand) {
     let i = this.allCandidats.indexOf(uCand);
     this.allCandidats[i] = uCand;
   }
+  updateCandidatAPI(uCand) {
+    return this.http.put(`${this.link}/${uCand._id}`, uCand);
+  }
 
+  deleteCandidatAPI(id) {
+    return this.http.delete(`${this.link}/${id}`);
+  }
+
+  getAllCandidatsAPI() {
+    return this.http.get(this.link);
+  }
   getAllCandidats() {
     return this.allCandidats;
   }
 
+  getCandidatByIdAPI(id) {
+    return this.http.get(`${this.link}/${id}`);
+  }
   getCandidatById(id) {
     return this.allCandidats.find((element) => element._id == id);
   }
